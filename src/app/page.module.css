@@ -92,10 +92,14 @@ a.secondary {
   min-width: 180px;
 }
 
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
+.button {
+  appearance: none;
+  border: 20px solid var(--gray-alpha-200);
+  background: none;
+  cursor: pointer;
+  
+  flex-grow: 1;
+
 }
 
 .footer a {

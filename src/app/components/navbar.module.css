@@ -1,0 +1,27 @@
+.main {
+  background-color: darkslategray;
+  margin-top: 90vh;  
+  
+}
+
+.footer {  
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+
+.button {
+  width: 25vw;
+  padding : 10px;
+  color: aliceblue;
+  appearance: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: darkslategray;
+  cursor: pointer;    
+  font-size: 12px;
+  font-weight: bold;
+
+}
