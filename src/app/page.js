@@ -2,17 +2,20 @@
 
 import styles from "./page.module.css";
 import Navbar from "./components/navbar/navbar";
-import { Box, Typography } from "@mui/material";
-import { useSelectedLayoutSegment } from "next/navigation";
+
+import { useSearchParams } from "next/navigation";
 import SearchTab from "./tabs/searchTab";
 import MedicalRecordTab from "./tabs/medicalRecordTab";
 import PetTab from "./tabs/petTab";
 import CheckOutTab from "./tabs/checkOutTab";
+import MenuTab from "./tabs/menuTab";
+import { useState } from "react";
 
 
 export default function Home() {
     
-  const activeTab = useSelectedLayoutSegment();
+  const [activeTab, setActiveTab] = useState('search');
+  
   console.log(activeTab)
   
   const renderContent = (activeTab) => {
@@ -25,19 +28,19 @@ export default function Home() {
         return <PetTab />;
       case 'checkout':
         return <CheckOutTab />;
-      default:
+      case 'menu':
+          return <MenuTab />;
+
+        default:
         return null;
     }
   };
-
-
+  
   return (
     <>
-    <Navbar activeTab={activeTab}/>
-    <main className={styles.main}>
-      <Typography>FREE VET APP</Typography>
-{/* 
-      {renderContent(tab)}       */}
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <main className={styles.main}>
+      {renderContent(activeTab)}
     </main>
     </>
   );
