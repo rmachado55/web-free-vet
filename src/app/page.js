@@ -2,18 +2,23 @@
 
 import styles from "./page.module.css";
 import Navbar from "./components/navbar/navbar";
-
-import { useSearchParams } from "next/navigation";
 import SearchTab from "./tabs/searchTab";
 import MedicalRecordTab from "./tabs/medicalRecordTab";
 import PetTab from "./tabs/petTab";
 import CheckOutTab from "./tabs/checkOutTab";
 import MenuTab from "./tabs/menuTab";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 
 export default function Home() {
-    
+  useEffect(() => {
+    const userAgent = navigator.userAgent || "";
+    setIsMobile(/iPhone|iPad|iPod|Android/i.test(userAgent));
+  }, []);
+
+  const [isMobile, setIsMobile] = useState(false);
+
   const [activeTab, setActiveTab] = useState('search');
   
   console.log(activeTab)
@@ -38,7 +43,7 @@ export default function Home() {
   
   return (
     <>
-      <Navbar activeTab={activeTab} setActiveTab={setActiveTab}/>
+      <Navbar isMobile ={isMobile} activeTab={activeTab} setActiveTab={setActiveTab}/>
       <main className={styles.main}>
       {renderContent(activeTab)}
     </main>

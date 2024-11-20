@@ -1,0 +1,14 @@
+.paper{  
+  width: 90vw;
+  display: grid;
+  justify-content: center;
+  border-style: 'solid dashed';
+  box-shadow: '0 4px 8px 0 rgba(0,0,0,0.2)';
+  background-color: aqua;
+}
+
+.searchBoxWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 10px,
+}

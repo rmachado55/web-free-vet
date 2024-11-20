@@ -6,10 +6,21 @@ import PetsIcon from '@mui/icons-material/Pets';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import PointOfSaleIcon  from "@mui/icons-material/PointOfSale";
 import MenuIcon  from "@mui/icons-material/Menu";
-import { Button, Box, Paper, Typography } from "@mui/material";
+import { Button, Box, Paper, Typography } from '@mui/material';
 
-export default function Navbar({activeTab, setActiveTab}) {   
-  
+export async function getServerSideProps(context) {
+  const userAgent = context.req.headers["user-agent"] || "";
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(userAgent);
+
+  return {
+    props: {
+      isMobile,
+    },
+  };
+}
+
+export default function Navbar({activeTab, setActiveTab, isMobile}) {     
+
   return (    
     <Box className={styles.main}>
       <Paper className={styles.navbar}>
@@ -20,9 +31,10 @@ export default function Navbar({activeTab, setActiveTab}) {
             backgroundColor: activeTab === 'search' ? 'cyan' : '#f2f2f2',}}
         >
           <ManageSearchIcon fontSize="large"/>
-            <Typography element="span" className={styles.title}>
+          {isMobile ? null :       
+            <Typography element="span" className={styles.title} >
                 BUSCA
-            </Typography>
+            </Typography>}
         </Button>        
         <Button  
           className={styles.button}
@@ -31,9 +43,10 @@ export default function Navbar({activeTab, setActiveTab}) {
             backgroundColor: activeTab === 'medicalrecord' ? 'cyan' : '#f2f2f2',}}
         >
           <MedicalInformationIcon fontSize="large"/>
+            {isMobile ? null :
             <Typography className={styles.title}>
               CONSULTA
-            </Typography>
+            </Typography>}
         </Button>
         
         <Button 
@@ -43,9 +56,10 @@ export default function Navbar({activeTab, setActiveTab}) {
             backgroundColor: activeTab === 'checkout' ? 'cyan' : '#f2f2f2',}}
         >
           <PointOfSaleIcon fontSize="large"/>
+          {isMobile ? null :
           <Typography className={styles.title}>
             CHECK-OUT
-          </Typography>
+          </Typography>}
         </Button>
 
         <Button 
@@ -55,9 +69,10 @@ export default function Navbar({activeTab, setActiveTab}) {
             backgroundColor: activeTab === 'pet' ? 'cyan' : '#f2f2f2'}}
         >
           <PetsIcon fontSize="large"/>
+          {isMobile ? null :
           <Typography className={styles.title}>
             PET
-          </Typography>
+          </Typography>}
         </Button>
 
         <Button
@@ -67,9 +82,11 @@ export default function Navbar({activeTab, setActiveTab}) {
             backgroundColor: activeTab === 'menu' ? 'cyan' : '#f2f2f2'}}  
         >
           <MenuIcon fontSize="large"/>
+          {isMobile ? null :
           <Typography className={styles.title}>
             MENU
           </Typography>
+          }
         </Button>
       </Paper>      
     </Box>
