@@ -1,13 +1,29 @@
-.navbar {
-  background-color: rgb(60, 141, 141);
-  margin-top: 90vh;  
-  
-}
-
-.footer {  
+.navbar {      
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  
+  display: flex;  
+  height: 10vh;    
 }
 
+.title{
+  color: rgb(16, 63, 104);  
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.active{
+  color: rgb(16, 63, 104);  
+  font-size: 82px;
+  font-weight: bold;
+}
+
+.button{
+  width: 25vw;
+  padding : 10px;
+  color: aliceblue;
+  appearance: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: rgb(37, 65, 107);
+  cursor: pointer;
