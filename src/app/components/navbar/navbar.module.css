@@ -1,0 +1,13 @@
+.navbar {
+  background-color: rgb(60, 141, 141);
+  margin-top: 90vh;  
+  
+}
+
+.footer {  
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
