@@ -32,9 +32,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
         >
           <ManageSearchIcon fontSize="large"/>
           {isMobile ? null :       
-            <Typography element="span" className={styles.title} >
+            <p element="span" className={styles.title} >
                 BUSCA
-            </Typography>}
+            </p>}
         </Button>        
         <Button  
           className={styles.button}
@@ -44,9 +44,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
         >
           <MedicalInformationIcon fontSize="large"/>
             {isMobile ? null :
-            <Typography className={styles.title}>
+            <p className={styles.title}>
               CONSULTA
-            </Typography>}
+            </p>}
         </Button>
         
         <Button 
@@ -57,9 +57,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
         >
           <PointOfSaleIcon fontSize="large"/>
           {isMobile ? null :
-          <Typography className={styles.title}>
+          <p className={styles.title}>
             CHECK-OUT
-          </Typography>}
+          </p>}
         </Button>
 
         <Button 
@@ -70,9 +70,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
         >
           <PetsIcon fontSize="large"/>
           {isMobile ? null :
-          <Typography className={styles.title}>
+          <p className={styles.title}>
             PET
-          </Typography>}
+          </p>}
         </Button>
 
         <Button
@@ -83,9 +83,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
         >
           <MenuIcon fontSize="large"/>
           {isMobile ? null :
-          <Typography className={styles.title}>
+          <p className={styles.title}>
             MENU
-          </Typography>
+          </p>
           }
         </Button>
       </Paper>      
