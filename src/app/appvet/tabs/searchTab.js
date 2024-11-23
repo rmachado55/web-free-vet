@@ -2,7 +2,7 @@ import styles from "./tab.module.css";
 import { Box, Input,InputLabel, Paper, Typography } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
-export default function SearchTab() {
+export default function SearchTab(Pet) {
   return (
     <Box>
       <Paper className={styles.paper}>
@@ -13,7 +13,8 @@ export default function SearchTab() {
         </Box>        
       </Paper>
       <Paper className={styles.paper}>
-        <Typography>Resultados:</Typography>
+        
+
       </Paper>
     </Box>
   );

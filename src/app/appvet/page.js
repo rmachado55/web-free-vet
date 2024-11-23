@@ -1,7 +1,7 @@
 "use client";
 
-import styles from "./page.module.css";
-import Navbar from "./components/navbar/navbar";
+import styles from "./appvet.module.css";
+import Navbar from "./navbar/navbar";
 import SearchTab from "./tabs/searchTab";
 import MedicalRecordTab from "./tabs/medicalRecordTab";
 import PetTab from "./tabs/petTab";
@@ -37,7 +37,7 @@ const currentService = [{
 
 ]
 
-export default function AppVet() {
+export default function AppVet(Pet) {
   useEffect(() => {
     const userAgent = navigator.userAgent || "";
     setIsMobile(/iPhone|iPad|iPod|Android/i.test(userAgent));
@@ -46,17 +46,15 @@ export default function AppVet() {
   const [isMobile, setIsMobile] = useState(false);
 
   const [activeTab, setActiveTab] = useState('search');
-  
-  console.log(activeTab)
-  
+   
   const renderContent = (activeTab) => {
     switch (activeTab) {
       case 'search':
-        return <SearchTab />;
+        return <SearchTab Pet={Pet}/>;
       case 'medicalrecord':
         return <MedicalRecordTab />;
       case 'pet':
-        return <PetTab />;
+        return <PetTab Pet={Pet} />;
       case 'checkout':
         return <CheckOutTab />;
       case 'menu':
@@ -72,7 +70,7 @@ export default function AppVet() {
       <Navbar isMobile ={isMobile} activeTab={activeTab} setActiveTab={setActiveTab}/>
       <main className={styles.main}>
       {renderContent(activeTab)}
-    </main>
+      </main>
     </>
   );
   

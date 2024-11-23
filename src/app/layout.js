@@ -1,6 +1,5 @@
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import "./globals.css";
-import Navbar from './components/navbar/navbar';
 
 export const metadata = {
   title: "Free Vet Web App",
@@ -9,7 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={"hubot-sans-body"}>
         <AppRouterCacheProvider>
           {children}
