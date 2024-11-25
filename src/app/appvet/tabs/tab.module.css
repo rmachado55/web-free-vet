@@ -1,14 +1,66 @@
 .paper{  
-  width: 90vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
   display: grid;
-  justify-content: center;
-  border-style: 'solid dashed';
-  box-shadow: '0 4px 8px 0 rgba(0,0,0,0.2)';
-  background-color: aqua;
+  position: fixed;  
+  margin-left: 10vw;
+  width: 80vw;  
+  justify-content: center;  
+  background-color: rgb(173, 250, 250);  
+  border-radius: 12;
+}
+
+.tab{
+  display: grid;
+  width: '100%';
+}
+.cardList{
+  display: grid;
+  width: '100%';
+}
+
+.cardContainer{
+  margin-left: 5vw;
+  margin-top: 10px;
+  gap:10px;
+  display: flex;
+  width: 90vw;
+  cursor: pointer;
+  background-color: seashell;
+}
+
+.cardData{  
+  display:flex;
+  gap:12px;
+  flex-direction: row;  
+}
+.cardImageContainer{
+  width: 60px;
+  height: 60px;
+  display:grid;
+  gap:10px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cardImageMale{
+  border-radius: 50%;
+  border: 4px solid rgb(3, 47, 190);
+  display: block;
+}
+
+.cardImageFemale{
+  border-radius: 50%;
+  border: 4px solid rgb(226, 13, 198);
 }
 
 .searchBoxWrapper {
   display: flex;
   flex-direction: row;
   gap: 10px,
+}
+
+.cardButton{
+  display: grid;
+  gap:20px;
+  padding:10px;
 }

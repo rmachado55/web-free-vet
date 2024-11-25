@@ -1,19 +1,17 @@
-'use client';
-import { useRouter } from 'next/navigation'
+import Link from "next/link";
 
-export default function Home() {  
+export default async function Home() {   
   
-  const router = useRouter();
-
-  function handleClick(route){
-    router.push(route);
-  }
 
   return (
-    <main>
-      <button onClick={() => handleClick('/login')}>Login</button>      
-      <button onClick={() => handleClick('/register')}>Cadastre-se</button>
-      <button onClick={() => handleClick('/appvet')}>AppVet</button>
+    <main>      
+      <Link href='/login'>
+        <button >Login</button>      
+      </Link>
+      <Link href="/register"><button>Cadastre-se</button></Link>
+      <Link href='/appvet'>
+        <button >AppVet</button>
+      </Link>
     </main>
   );  
   
