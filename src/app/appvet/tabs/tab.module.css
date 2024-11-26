@@ -19,19 +19,19 @@
   width: '100%';
 }
 
-.cardContainer{
-  margin-left: 5vw;
-  margin-top: 10px;
+.cardContainer{  
+  margin-top:10px;
   gap:10px;
   display: flex;
-  width: 90vw;
+  width: 96vw;
   cursor: pointer;
   background-color: seashell;
 }
 
 .cardData{  
   display:flex;
-  gap:12px;
+  gap:20px;
+  font-size: smaller;
   flex-direction: row;  
 }
 .cardImageContainer{

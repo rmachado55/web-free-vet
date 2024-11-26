@@ -6,7 +6,6 @@ import PetsIcon from '@mui/icons-material/Pets';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import PointOfSaleIcon  from "@mui/icons-material/PointOfSale";
 import MenuIcon  from "@mui/icons-material/Menu";
-import { Button, Box, Paper, Typography } from '@mui/material';
 
 export async function getServerSideProps(context) {
   const userAgent = context.req.headers["user-agent"] || "";
@@ -22,9 +21,9 @@ export async function getServerSideProps(context) {
 export default function Navbar({activeTab, setActiveTab, isMobile}) {     
 
   return (    
-    <Box className={styles.main}>
-      <Paper className={styles.navbar}>
-        <Button
+    <div className={styles.main}>
+      <nav className={styles.navbar}>
+        <button
           className={styles.button}
           onClick={() => {setActiveTab('search')}}  
           style={{
@@ -35,21 +34,21 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
             <p element="span" className={styles.title} >
                 BUSCA
             </p>}
-        </Button>        
-        <Button  
+        </button>        
+        <button  
           className={styles.button}
           onClick={() => {setActiveTab('medicalrecord')}}
           style={{
             backgroundColor: activeTab === 'medicalrecord' ? 'cyan' : '#f2f2f2',}}
         >
-          <MedicalInformationIcon fontSize="large"/>
+          <PetsIcon fontSize="large"/>          
             {isMobile ? null :
             <p className={styles.title}>
-              CONSULTA
+              ATENDIMENTO
             </p>}
-        </Button>
+        </button>
         
-        <Button 
+        <button 
           className={ styles.button}
           onClick={() => {setActiveTab('checkout')}}
           style={{
@@ -60,22 +59,22 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           <p className={styles.title}>
             CHECK-OUT
           </p>}
-        </Button>
+        </button>
 
-        <Button 
+        <button 
           className={ styles.button}
           onClick={() => {setActiveTab('pet')}}
           style={{
-            backgroundColor: activeTab === 'pet' ? 'cyan' : '#f2f2f2'}}
+            backgroundColor: activeTab === 'pet' || activeTab === 'tutor' ? 'cyan' : '#f2f2f2'}}
         >
-          <PetsIcon fontSize="large"/>
+          <MedicalInformationIcon fontSize="large"/>
           {isMobile ? null :
           <p className={styles.title}>
-            PET
+            PERFIL
           </p>}
-        </Button>
+        </button>
 
-        <Button
+        <button
           className={ styles.button}
           onClick={() => {setActiveTab('menu')}}
           style={{
@@ -87,9 +86,9 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
             MENU
           </p>
           }
-        </Button>
-      </Paper>      
-    </Box>
+        </button>
+      </nav>      
+    </div>
   );
 
   

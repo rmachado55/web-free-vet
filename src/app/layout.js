@@ -1,5 +1,5 @@
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import "./globals.css";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 
 export const metadata = {
   title: "Free Vet Web App",
@@ -9,11 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={"hubot-sans-body"}>
-        <AppRouterCacheProvider>
+      <AppRouterCacheProvider>
+        <body className={"hubot-sans-body"}>
           {children}
-        </AppRouterCacheProvider>
-      </body>
+        </body>
+      </AppRouterCacheProvider>
     </html>
   );
 }
