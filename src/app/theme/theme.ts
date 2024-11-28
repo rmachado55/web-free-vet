@@ -9,13 +9,14 @@ const theme = createTheme({
     light: {
       palette: {
         primary: {
-          main: 'rgb(60, 141, 141)',
+          main: 'rgb(76, 193, 255);',
+
         },
         secondary: {
-          main: '#f2f2f2',
+          main: 'rgb(7, , 255);',
         },
       },
-    },
+    },   
   },
 });    
 

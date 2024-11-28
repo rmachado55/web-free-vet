@@ -4,7 +4,6 @@
   display: grid;
   position: fixed;  
   margin-left: 10vw;
-  width: 80vw;  
   justify-content: center;  
   background-color: rgb(173, 250, 250);  
   border-radius: 12;
@@ -22,18 +21,23 @@
 .cardContainer{  
   margin-top:10px;
   gap:10px;
-  display: flex;
-  width: 96vw;
+  display: flex;  width: '100%';
   cursor: pointer;
   background-color: seashell;
 }
 
 .cardData{  
-  display:flex;
+  display:grid;
   gap:20px;
   font-size: smaller;
   flex-direction: row;  
 }
+
+.cardInfos{
+  display:flex;
+  
+}
+
 .cardImageContainer{
   width: 60px;
   height: 60px;
@@ -44,13 +48,34 @@
 }
 .cardImageMale{
   border-radius: 50%;
-  border: 4px solid rgb(3, 47, 190);
+  border: 4px solid rgb(9, 110, 224);
   display: block;
 }
 
 .cardImageFemale{
   border-radius: 50%;
-  border: 4px solid rgb(226, 13, 198);
+  border: 4px solid rgb(247, 104, 175);
+}
+
+.cardActions{
+  display: flex;
+  position: absolute;
+  z-index: 0;
+  right: 20px;  
+  align-items: center;
+  gap:10px;
+}
+
+.cardButton{
+  padding: 4px;
+  height: fit-content;
+}
+
+
+.specieIcon{
+  position: absolute;
+  background-color: seashell;  
+  border-radius: 50%;
 }
 
 .searchBoxWrapper {
@@ -63,4 +88,8 @@
   display: grid;
   gap:20px;
   padding:10px;
+}
+
+.searchbox{
+  font-size: xx-large;
 }
