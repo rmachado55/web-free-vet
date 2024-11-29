@@ -46,7 +46,7 @@ export default function Login() {
         <Card variant="outlined">          
           <Box display="grid" justifyContent="center"  m={4}>
           <Image src={logo} alt="Logo" width={140} />  
-          <Typography variant="h4" sx={{ fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontFamily: 'var(--font-roboto)' }}>Free Vet</Typography>
+          <Typography variant="h4" sx={{ fontSize: 'clamp(2rem, 10vw, 2.15rem)', fontFamily: 'var(--font-hubot-sans)' }}>Free Vet</Typography>
           </Box>
           
           <Typography

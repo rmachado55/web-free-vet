@@ -6,7 +6,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import PointOfSaleIcon  from "@mui/icons-material/PointOfSale";
 import MenuIcon  from "@mui/icons-material/Menu";
-import theme from "../../../../theme";
+import theme from "../../../theme/theme.ts";
 
 export async function getServerSideProps(context) {
   const userAgent = context.req.headers["user-agent"] || "";

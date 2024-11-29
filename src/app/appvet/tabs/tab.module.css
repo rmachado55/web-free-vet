@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
 .paper{    
   width: 96vw;
   position: fixed;    
-  background-color: rgb(173, 250, 250);  
+  background-color: rgb(181, 226, 222);  
   border-radius: 12;
+  z-index: 2;
 }
 
 .tab{
@@ -17,10 +20,10 @@
 }
 
 .cardContainer{  
-  margin-top:10px;
+  margin-top:10px;  
   gap:10px;
   display: flex;  width: '100%';
-  cursor: pointer;
+  cursor: pointer;  
   background-color: seashell;
 }
 

@@ -3,6 +3,7 @@ import styles from "./tab.module.css";
 import Image from "next/image";
 import birthToYearsConversion from "../../utils/birthToYearsConversion";
 import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 import PetsIcon from '@mui/icons-material/Pets';
 import { Tutors } from "../store/mocks/tutors";
 import { GiCat, GiSittingDog } from "react-icons/gi";
@@ -10,8 +11,7 @@ import { FaClinicMedical } from "react-icons/fa";
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import { Box, Button, Paper, Typography } from "@mui/material";
-
-
+import theme from "../../theme/theme";
 
 export default function SearchTab({ petList, setActiveProfile, setActiveTab, tutorList }) {
   console.log(petList)
@@ -59,20 +59,24 @@ export default function SearchTab({ petList, setActiveProfile, setActiveTab, tut
         {filteredPets.map((pet, index) => (
           <div className={styles.cardContainer} key={index} >
 
-              <Image className={pet.gender === 'Macho' ? styles.cardImageMale : styles.cardImageFemale} width={50} height={50} src={`http://www.veterinariapassofundo.com/assets/${pet.id}.jpg`} alt={pet.name} />
+              <Image className={pet.gender === 'Macho' ? styles.cardImageMale : styles.cardImageFemale} width={64} height={64} src={`http://www.veterinariapassofundo.com/assets/${pet.id}.jpg`} alt={pet.name} />
               <div className={styles.specieIcon}>
               {
-              pet.specie === 'Cão' ? <GiSittingDog  fontSize={20} /> : <GiCat fontSize={20} />
+              pet.specie === 'Cão' ? <GiSittingDog  fontSize={24} /> : <GiCat fontSize={24} />
             }
               </div>
 
             <Box className={styles.cardInfos}>
-            <Typography element='h2' style={{ textAlignLast: '-moz-initial'}} element="h3">{pet.name}</Typography>
-              <Typography style={{ textAlignLast: '-moz-initial'}} element="h3">{pet.breed} | Tutor: {pet.tutorName}</Typography>
+            <Typography element="h2" fontWeight={600} style={{ textAlignLast: '-moz-initial'}} >{pet.name}</Typography>
+              <Typography style={{ textAlignLast: '-moz-initial'}} element="h3">{pet.breed}</Typography>
+              <Typography style={{ textAlignLast: '-moz-initial'}} element="h3">Tutor: {pet.tutor.name}</Typography>
             </Box>
-          <Box className={styles.cardActions}>
-            <Button className={styles.cardButton} onClick={() => handleClickPet(pet)}type="submit"><MedicalInformationIcon fontSize="medium"/></Button>
-            <Button startIcon={<FaClinicMedical fontSize={24}/>} className={styles.cardButton} onClick={() => handleClickMedicalRecord(pet)}type="submit"></Button>          
+          <Box color={theme.palette.secondary.main} className={styles.cardActions}>
+          <Box className={styles.cardButton} onClick={() => handleClickTutor(pet.tutor.id)}type="submit"><AccountBoxIcon fontSize="large" /></Box>  
+            <Box className={styles.cardButton} onClick={() => handleClickPet(pet)}type="submit"><MedicalInformationIcon fontSize="large" /></Box>
+            <Box className={styles.cardButton} onClick={() => handleClickMedicalRecord(pet)}type="submit"><FaClinicMedical fontSize={32} /></Box> 
+             
+                  
           </Box>         
           </div>
         ))}        

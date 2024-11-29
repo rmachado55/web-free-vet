@@ -13,10 +13,10 @@ export const Pets =
     knownDiseases: []
   },
   {
-    id: 'labrador',
+    id: 'main',
     name: 'Luna',
-    specie: 'Cachorro',
-    breed: 'S.R.D.',
+    specie: 'Gato',
+    breed: 'Maine Coon',
     gender: 'Fêmea',
     birthDate: '2023-07-15T02:00:00.000Z',
     castrated: true,
@@ -124,10 +124,9 @@ export const Pets =
     knownDiseases: []
   },
   {
-    name: 'Lola',
-    id: 3,
-    tutorName: 'Beatriz',
-    tutorId: '672e8615430998a25a2055c6',
+    name: 'Lola',    
+    id: 3,    
+    tutor: { id: '672e8615430998a25a2055c6', name: 'Beatriz' },
     specie: 'Gato',
     breed: 'Siames',
     age: 1,
@@ -137,9 +136,9 @@ export const Pets =
   },
   {
     name: 'Mel',
-    id: 4,
-    tutorName: 'João',
+    id: 4,    
     tutorId: '672e8615430998a25a2055c7',
+    tutor: { id: '672e8615430998a25a2055c7', name: 'João' },
     specie: 'Cão',
     breed: 'Poodle',
     age: 4,
@@ -150,8 +149,7 @@ export const Pets =
   {
     name: 'Sasha',
     id: 5,
-    tutorName: 'João',
-    tutorId: '672e8615430998a25a2055c7',
+    tutor: { id: '672e8615430998a25a2055c7', name: 'João' },
     specie: 'Gato',
     breed: 'Persa',
     age: 3,

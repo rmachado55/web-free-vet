@@ -1,7 +1,9 @@
-export default function TutorTab() {
+export default function TutorTab(id) {
+  
+  
   return (
     <div>
-      <h1>Tutor</h1>
+      <h1>Nome do tutor: </h1>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   typography: {
-    fontFamily: 'var(--font-roboto)',
+    fontFamily: 'var(--font-hubot-sans)',
     h1: {
       fontSize: '2rem',
       fontWeight: 600,
@@ -32,12 +32,12 @@ const theme = createTheme({
   colorSchemes: {
     light: {
       palette: {
-        primary: {
-          main: 'rgb(76, 193, 255);',
+        primary: {          
+          main: 'rgb(144,193 , 200)',         
 
         },
         secondary: {
-          main: 'rgb(7, , 255);',
+          main: 'rgb(2, 85, 121)',
         },
       },
     },   
