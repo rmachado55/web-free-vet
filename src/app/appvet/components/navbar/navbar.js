@@ -6,6 +6,7 @@ import PetsIcon from '@mui/icons-material/Pets';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import PointOfSaleIcon  from "@mui/icons-material/PointOfSale";
 import MenuIcon  from "@mui/icons-material/Menu";
+import theme from "../../../../theme";
 
 export async function getServerSideProps(context) {
   const userAgent = context.req.headers["user-agent"] || "";
@@ -27,7 +28,7 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           className={styles.button}
           onClick={() => {setActiveTab('search')}}  
           style={{
-            backgroundColor: activeTab === 'search' ? 'cyan' : '#f2f2f2',}}
+            backgroundColor: activeTab === 'search' ? theme.palette.primary.main : theme.palette.primary.light,}}
         >
           <ManageSearchIcon fontSize="large"/>
           {isMobile ? null :       
@@ -39,7 +40,7 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           className={styles.button}
           onClick={() => {setActiveTab('medicalrecord')}}
           style={{
-            backgroundColor: activeTab === 'medicalrecord' ? 'cyan' : '#f2f2f2',}}
+            backgroundColor: activeTab === 'medicalrecord' ? theme.palette.primary.main : theme.palette.primary.light}}
         >
           <PetsIcon fontSize="large"/>          
             {isMobile ? null :
@@ -52,7 +53,7 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           className={ styles.button}
           onClick={() => {setActiveTab('checkout')}}
           style={{
-            backgroundColor: activeTab === 'checkout' ? 'cyan' : '#f2f2f2',}}
+            backgroundColor: activeTab === 'checkout' ? theme.palette.primary.main : theme.palette.primary.light}}
         >
           <PointOfSaleIcon fontSize="large"/>
           {isMobile ? null :
@@ -65,7 +66,7 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           className={ styles.button}
           onClick={() => {setActiveTab('pet')}}
           style={{
-            backgroundColor: activeTab === 'pet' || activeTab === 'tutor' ? 'cyan' : '#f2f2f2'}}
+            backgroundColor: activeTab === 'pet' || activeTab === 'tutor' ? theme.palette.primary.main : theme.palette.primary.light}}
         >
           <MedicalInformationIcon fontSize="large"/>
           {isMobile ? null :
@@ -78,7 +79,7 @@ export default function Navbar({activeTab, setActiveTab, isMobile}) {
           className={ styles.button}
           onClick={() => {setActiveTab('menu')}}
           style={{
-            backgroundColor: activeTab === 'menu' ? 'cyan' : '#f2f2f2'}}  
+            backgroundColor: activeTab === 'menu' ? theme.palette.primary.main : theme.palette.primary.light}}  
         >
           <MenuIcon fontSize="large"/>
           {isMobile ? null :

@@ -1,10 +1,6 @@
-.paper{  
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: grid;
-  position: fixed;  
-  margin-left: 10vw;
-  justify-content: center;  
+.paper{    
+  width: 96vw;
+  position: fixed;    
   background-color: rgb(173, 250, 250);  
   border-radius: 12;
 }
@@ -14,6 +10,8 @@
   width: '100%';
 }
 .cardList{
+  margin-top: 4vh;
+  margin-bottom: 10vh;
   display: grid;
   width: '100%';
 }
@@ -26,30 +24,10 @@
   background-color: seashell;
 }
 
-.cardData{  
-  display:grid;
-  gap:20px;
-  font-size: smaller;
-  flex-direction: row;  
-}
 
-.cardInfos{
-  display:flex;
-  
-}
-
-.cardImageContainer{
-  width: 60px;
-  height: 60px;
-  display:grid;
-  gap:10px;
-  flex-direction: row;
-  justify-content: space-between;
-}
 .cardImageMale{
   border-radius: 50%;
-  border: 4px solid rgb(9, 110, 224);
-  display: block;
+  border: 4px solid rgb(9, 110, 224);  
 }
 
 .cardImageFemale{
@@ -61,6 +39,7 @@
   display: flex;
   position: absolute;
   z-index: 0;
+  margin-top:20px;
   right: 20px;  
   align-items: center;
   gap:10px;

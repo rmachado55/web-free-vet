@@ -9,13 +9,14 @@ import { GiCat, GiSittingDog } from "react-icons/gi";
 import { FaClinicMedical } from "react-icons/fa";
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import { Box, Button, Paper, Typography } from "@mui/material";
 
 
 
 export default function SearchTab({ petList, setActiveProfile, setActiveTab, tutorList }) {
-  
+  console.log(petList)
   const [search, setSearch] = useState('');
-  const [tutorsFilter, settutorsFilter] = useState(false);
+  const [tutorsFilter, setTutorsFilter] = useState(false);
   const [dogsFilter, setDogsFilter] = useState(false);
   const [catsFilter, setCatsFilter] = useState(false);
   
@@ -29,12 +30,6 @@ export default function SearchTab({ petList, setActiveProfile, setActiveTab, tut
     return petName.includes(searchTerm);
   });
 
-  const filteredTutors = tutorList.filter((tutor) => {
-    const tutorName = tutor.name.toLowerCase();
-    const searchTerm = search.toLowerCase();
-    return tutorName.includes(searchTerm);
-  });
-
   function handleClickPet(pet) {
     setActiveProfile(pet);
     setActiveTab('pet');
@@ -42,7 +37,6 @@ export default function SearchTab({ petList, setActiveProfile, setActiveTab, tut
 
   function handleClickMedicalRecord(pet) {
     setActiveProfile(pet);
-    setStatus('Open');
     setActiveTab('medicalrecord');
   }
 
@@ -51,8 +45,10 @@ export default function SearchTab({ petList, setActiveProfile, setActiveTab, tut
     setActiveTab('tutor');
   }
 
+
+
   return (
-    <div className={styles.tab}>
+    <Box className={styles.tab}>
       <div className={styles.paper}>
       <form>
           <ManageSearchIcon fontSize="large"/>
@@ -62,53 +58,25 @@ export default function SearchTab({ petList, setActiveProfile, setActiveTab, tut
       <div className={styles.cardList}>
         {filteredPets.map((pet, index) => (
           <div className={styles.cardContainer} key={index} >
-            <div className={styles.cardImageContainer}>
-              <Image className={pet.gender === 'Macho' ? styles.cardImageMale : styles.cardImageFemale} width={60} height={60} src={`http://www.veterinariapassofundo.com/assets/${pet.id}.jpg`} alt={pet.name} />
+
+              <Image className={pet.gender === 'Macho' ? styles.cardImageMale : styles.cardImageFemale} width={50} height={50} src={`http://www.veterinariapassofundo.com/assets/${pet.id}.jpg`} alt={pet.name} />
               <div className={styles.specieIcon}>
               {
               pet.specie === 'Cão' ? <GiSittingDog  fontSize={20} /> : <GiCat fontSize={20} />
             }
               </div>
-            </div>
-            <div>
-              <h3>{pet.name}</h3>
-              <h5>Tutor: {pet.tutor.name}</h5>
-            </div>
-            <div className={styles.cardInfos}>
-            <div className={styles.cardData}>  
-                  <p>{pet.breed}</p>            
-                  <p>{ birthToYearsConversion(pet.birthDate) }</p>                  
-                </div>                            
-            </div>
-          <div>
-            
-          </div>
-          <div className={styles.cardActions}>
-            <button className={styles.cardButton} onClick={() => handleClickPet(pet)}type="submit"><MedicalInformationIcon fontSize="medium"/></button>
-            <button className={styles.cardButton} onClick={() => handleClickMedicalRecord(pet)}type="submit"><FaClinicMedical fontSize={24}/></button>          
-          </div>         
-          </div>
-        ))}
-        {filteredTutors.map((tutor, index) => (         
-          <div className={styles.cardContainer} key={index}>
 
-          <div className={styles.cardImageContainer}>              
-            </div>
-          <div className={styles.cardContainer}>
-            <AccountBoxIcon fontSize="large"/>
-            <h2>{tutor.name}</h2>
-            <div className={styles.cardData}>            
-            </div>            
+            <Box className={styles.cardInfos}>
+            <Typography element='h2' style={{ textAlignLast: '-moz-initial'}} element="h3">{pet.name}</Typography>
+              <Typography style={{ textAlignLast: '-moz-initial'}} element="h3">{pet.breed} | Tutor: {pet.tutorName}</Typography>
+            </Box>
+          <Box className={styles.cardActions}>
+            <Button className={styles.cardButton} onClick={() => handleClickPet(pet)}type="submit"><MedicalInformationIcon fontSize="medium"/></Button>
+            <Button startIcon={<FaClinicMedical fontSize={24}/>} className={styles.cardButton} onClick={() => handleClickMedicalRecord(pet)}type="submit"></Button>          
+          </Box>         
           </div>
-          <div className={styles.cardButton}>
-          <button onClick={() => handleClickTutor(tutor)}type="submit">Ficha Médica</button>
-          <button onClick={() => handleClickMedicalRecord(tutor)}type="submit">Iniciar Consulta</button>
-          
-          </div>         
-          </div>
-          ))                 
-        }
+        ))}        
       </div>
-    </div>
+    </Box>
   );
 }
